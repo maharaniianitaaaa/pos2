@@ -39,9 +39,9 @@
         border: 1px solid #fde68a;
     }
     .badge-stok-habis {
-        background-color: #fee2e2 !important;
-        color: #dc2626 !important;
-        border: 1px solid #fca5a5;
+        background-color: #770202 !important;
+        color: #940404 !important;
+        border: 1px solid #990d0d;
     }
     .table-custom text-muted-thead {
         background-color: #f1f5f9 !important;
