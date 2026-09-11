@@ -23,8 +23,17 @@
                     <td>{{ $key + 1 }}</td>
                     <td>{{ $item->nama_jenis }}</td>
                     <td>
-                        <!-- Tombol Edit & Hapus -->
+                        <!-- Tombol Edit -->
                         <a href="{{ route('Jenis.edit', $item->id) }}" class="btn btn-warning btn-sm">Edit</a>
+
+                        <!-- Tombol Hapus (Menggunakan Form agar Aman di Laravel) -->
+                        <form action="{{ route('Jenis.destroy', $item->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus jenis produk ini?')">
+                                Hapus
+                            </button>
+                        </form>
                     </td>
                 </tr>
             @empty
