@@ -38,6 +38,9 @@
 </style>
 
 <div class="container py-4">
+      @can('create', App\Models\Produk::class)
+<a href="{{ route('produk.create') }}" method="GET" class="btn btn-primary mb-3">Create</a>
+@endcan
     <!-- Notifikasi Sukses (Jika Ada) -->
     @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show mb-4 shadow-sm" role="alert">
@@ -53,9 +56,6 @@
             <p class="text-muted small mb-0">Kelola hak akses, tingkat jabatan administrator, dan akun operasional kasir Anda.</p>
         </div>
         <div>
-            <a href="{{ route('admin.users.create') }}" class="btn btn-primary px-4 py-2 shadow-sm fw-medium d-inline-flex align-items-center gap-2">
-                <span>➕</span> Create New User
-            </a>
         </div>
     </div>
 

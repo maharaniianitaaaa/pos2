@@ -6,6 +6,9 @@
 @include('layouts.navbar')
 
 <div class="container py-4">
+      @can('create', App\Models\Produk::class)
+<a href="{{ route('produk.create') }}" method="GET" class="btn btn-primary mb-3">Create</a>
+@endcan
     <!-- Notifikasi Error -->
     @if(session('errors'))
         <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
@@ -21,9 +24,6 @@
             <p class="text-muted small mb-0">Kelola dan pantau seluruh riwayat transaksi kasir Anda.</p>
         </div>
         <div>
-            <a href="{{ route('penjualan.create') }}" class="btn btn-primary px-4 shadow-sm fw-medium">
-                Create New Sale
-            </a>
         </div>
     </div>
 
