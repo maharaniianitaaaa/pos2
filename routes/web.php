@@ -35,6 +35,11 @@ Route::middleware('auth')->group(function () {
        ->name('penjualan.show');
         Route::delete('/penjualan/{id}', [PenjualanController::class, 'destroy'])
        ->name('penjualan.destroy');
+Route::get('/about', function () {
+    return view('tentang'); // Memicu file tentang.blade.php Anda
+})->name('about.index');
+
+
 
 
 
